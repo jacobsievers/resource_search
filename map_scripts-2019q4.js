@@ -8,6 +8,7 @@ var lat = 42.3703; // Default coords are IHR Cambridge
 var long = -71.1033;
 var data;
 var infowindow;
+var markerCluster;
 
 function doNothing() {
 	console.log('doNothing Called');
@@ -200,7 +201,7 @@ function initMap() {
 		});
 
 		// Add a marker clusterer to manage the markers.
-		var markerCluster = new MarkerClusterer(map, markersArray, {
+		markerCluster = new MarkerClusterer(map, markersArray, {
 			maxZoom: 13,
 			zoomOnClick: false,
 			styles: [{
@@ -238,36 +239,46 @@ function resetMarkers() {
 	// Hide all markers from map
 	for (var i = 0; i < markersArray.length; i++) {
 		markersArray[i].setMap(null);
+		markerCluster.clearMarkers();
 	}
 
 	// Loop through features and set all matching markers
 	for (var i = 0; i < markersArray.length; i++) {
 		if (($("#kw1").is(":checked")) && (markersArray[i].markerkw1 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw2").is(":checked")) && (markersArray[i].markerkw2 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw3").is(":checked")) && (markersArray[i].markerkw3 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw4").is(":checked")) && (markersArray[i].markerkw4 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw5").is(":checked")) && (markersArray[i].markerkw5 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw6").is(":checked")) && (markersArray[i].markerkw6 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw7").is(":checked")) && (markersArray[i].markerkw7 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw8").is(":checked")) && (markersArray[i].markerkw8 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 		if (($("#kw9").is(":checked")) && (markersArray[i].markerkw9 == "1")) {
 			markersArray[i].setMap(map);
+			markerCluster.addMarker(markersArray[i]);
 		};
 	}
 }
