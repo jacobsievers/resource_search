@@ -68,7 +68,6 @@ function initMap() {
 			var urlParts = url.replace('http://', '').replace('https://', '').split(/[/?#]/);
 			var website = urlParts[0];
 
-			var type = markerElem.getAttribute('type');
 			var phone = markerElem.getAttribute('phone');
 			var tty = markerElem.getAttribute('tty');
 
@@ -85,39 +84,39 @@ function initMap() {
 
 			//Add Title
 			var strong = document.createElement('h4');
-			strong.textContent = name
+			strong.textContent = name;
 			infowincontent.appendChild(strong);
 			infowincontent.appendChild(document.createElement('br'));
 
 			//Add types of services offered
 			if (type) {
 				var typeElement = document.createElement('h5');
-				var typeLabel = 'Services offered: '
-				typeElement.textContent = typeLabel + type
+				var typeLabel = 'Services offered: ';
+				typeElement.textContent = typeLabel + type;
 				infowincontent.appendChild(typeElement);
 			}
 
 			//Add address
 			if (place) {
 				var placeElement = document.createElement('h5');
-				var placeLabel = 'Address: '
-				placeElement.textContent = placeLabel + place
+				var placeLabel = 'Address: ';
+				placeElement.textContent = placeLabel + place;
 				infowincontent.appendChild(placeElement);
 			}
 
 			//Add Phone
 			if (phone) {
 				var phoneElement = document.createElement('h5');
-				var phoneLabel = 'Tel: '
-				phoneElement.textContent = phoneLabel + phone
+				var phoneLabel = 'Tel: ';
+				phoneElement.textContent = phoneLabel + phone;
 				infowincontent.appendChild(phoneElement);
 			}
 
 			//Add TTY
 			if (tty) {
 				var ttyElement = document.createElement('h5');
-				var ttyLabel = 'TTY: '
-				ttyElement.textContent = ttyLabel + tty
+				var ttyLabel = 'TTY: ';
+				ttyElement.textContent = ttyLabel + tty;
 				infowincontent.appendChild(ttyElement);
 			}
 
@@ -132,9 +131,9 @@ function initMap() {
 			//Add siteID from SF
 			if (siteID) {
 				var siteIDElement = document.createElement('h5');
-				siteIDElement.setAttribute("class", "siteID")
-				var siteIDLabel = 'Site ID: '
-				siteIDElement.textContent = siteIDLabel + siteID
+				siteIDElement.setAttribute("class", "siteID");
+				var siteIDLabel = 'Site ID: ';
+				siteIDElement.textContent = siteIDLabel + siteID;
 				infowincontent.appendChild(siteIDElement);
 			}
 
@@ -147,31 +146,31 @@ function initMap() {
 			// This set of conditionals will show markers if site matches ANY checked keywords
 			if (($("#kw1").is(":checked")) && (kw1 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw2").is(":checked")) && (kw2 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw3").is(":checked")) && (kw3 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw4").is(":checked")) && (kw4 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw5").is(":checked")) && (kw5 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw6").is(":checked")) && (kw6 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw7").is(":checked")) && (kw7 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw8").is(":checked")) && (kw8 == "1")) {
 				activeMap = map;
-			};
+			}
 			if (($("#kw9").is(":checked")) && (kw9 == "1")) {
 				activeMap = map;
-			};
+			}
 
 			// Add marker to map
 			var marker = new google.maps.Marker({
@@ -237,8 +236,8 @@ function downloadUrl(url, callback) {
 // FUNCTION resetMarkers - All markers are removed from map, and markers re-added if they match checkboxes.
 function resetMarkers() {
 	// Hide all markers from map
-	for (var i = 0; i < markersArray.length; i++) {
-		markersArray[i].setMap(null);
+	for (var h = 0; h < markersArray.length; h++) {
+		markersArray[h].setMap(null);
 		markerCluster.clearMarkers();
 	}
 
@@ -247,39 +246,47 @@ function resetMarkers() {
 		if (($("#kw1").is(":checked")) && (markersArray[i].markerkw1 == "1")) {
 			markersArray[i].setMap(map);
 			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw2").is(":checked")) && (markersArray[i].markerkw2 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw3").is(":checked")) && (markersArray[i].markerkw3 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw4").is(":checked")) && (markersArray[i].markerkw4 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw5").is(":checked")) && (markersArray[i].markerkw5 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw6").is(":checked")) && (markersArray[i].markerkw6 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw7").is(":checked")) && (markersArray[i].markerkw7 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw8").is(":checked")) && (markersArray[i].markerkw8 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
-		if (($("#kw9").is(":checked")) && (markersArray[i].markerkw9 == "1")) {
-			markersArray[i].setMap(map);
-			markerCluster.addMarker(markersArray[i]);
-		};
+		} else {
+			if (($("#kw2").is(":checked")) && (markersArray[i].markerkw2 == "1")) {
+				markersArray[i].setMap(map);
+				markerCluster.addMarker(markersArray[i]);
+			} else {
+				if (($("#kw3").is(":checked")) && (markersArray[i].markerkw3 == "1")) {
+					markersArray[i].setMap(map);
+					markerCluster.addMarker(markersArray[i]);
+				} else {
+					if (($("#kw4").is(":checked")) && (markersArray[i].markerkw4 == "1")) {
+						markersArray[i].setMap(map);
+						markerCluster.addMarker(markersArray[i]);
+					} else {
+						if (($("#kw5").is(":checked")) && (markersArray[i].markerkw5 == "1")) {
+							markersArray[i].setMap(map);
+							markerCluster.addMarker(markersArray[i]);
+						} else {
+							if (($("#kw6").is(":checked")) && (markersArray[i].markerkw6 == "1")) {
+								markersArray[i].setMap(map);
+								markerCluster.addMarker(markersArray[i]);
+							} else {
+								if (($("#kw7").is(":checked")) && (markersArray[i].markerkw7 == "1")) {
+									markersArray[i].setMap(map);
+									markerCluster.addMarker(markersArray[i]);
+								} else {
+									if (($("#kw8").is(":checked")) && (markersArray[i].markerkw8 == "1")) {
+										markersArray[i].setMap(map);
+										markerCluster.addMarker(markersArray[i]);
+									} else {
+										if (($("#kw9").is(":checked")) && (markersArray[i].markerkw9 == "1")) {
+											markersArray[i].setMap(map);
+											markerCluster.addMarker(markersArray[i]);
+										}
+									}
+								}
+							}
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -323,7 +330,7 @@ $(document).ready(function () {
 					lat = data.lat;
 					long = data.long;
 					newLocation(lat, long);
-					map.setZoom(14)
+					map.setZoom(14);
 				}
 			});
 
@@ -333,6 +340,6 @@ $(document).ready(function () {
 		} else {
 			//Set form class to error state
 			document.getElementById("program-finder").className = "has-error";
-		};
+		}
 	});
 });
