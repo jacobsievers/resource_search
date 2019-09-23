@@ -62,7 +62,7 @@ require $_SERVER['DOCUMENT_ROOT'] . '/includes/header.php';
 		</div><!-- /.row -->
 	</div><!-- /.container -->
 	<script defer src="https://healthrecovery.org/resource-search/markerclusterer.js"></script>
-	<script defer src="https://healthrecovery.org/resource-search/map_scripts-2019q4.js"></script>
+	<script defer src="https://healthrecovery.org/resource-search/map_scripts-2020q1.js"></script>
 	
     <script async defer
     src="https://maps.googleapis.com/maps/api/js?key=yourkey&callback=initMap">
