@@ -1,6 +1,10 @@
-// Massachusetts Resource Search v1.5
-// Locate Massachusetts programs by zipcode and program type.
-// Institute for Health & Recovery, Inc., 2019
+/**
+ * @name map+scripts
+ * @version version 1.5
+ * @author Jacob Sievers, Institute for Health & Recovery, Inc.
+ * @fileoverview
+ * Locate Massachusetts programs by zipcode and program type.
+ */
 
 var map;
 var markersArray = []; // Array to hold existing markers
@@ -241,41 +245,44 @@ function resetMarkers() {
 		markerCluster.clearMarkers();
 	}
 
-	// Loop through features and set all matching markers
+	/** 
+	 * Loop through all markers and set map if any keywords match.
+	 * Order is determined by frequency of keyword.
+	 * */ 
 	for (var i = 0; i < markersArray.length; i++) {
-		if (($("#kw1").is(":checked")) && (markersArray[i].markerkw1 == "1")) {
+		if (($("#kw7").is(":checked")) && (markersArray[i].markerkw7 == "1")) {
 			markersArray[i].setMap(map);
 			markerCluster.addMarker(markersArray[i]);
 		} else {
-			if (($("#kw2").is(":checked")) && (markersArray[i].markerkw2 == "1")) {
+			if (($("#kw1").is(":checked")) && (markersArray[i].markerkw1 == "1")) {
 				markersArray[i].setMap(map);
 				markerCluster.addMarker(markersArray[i]);
 			} else {
-				if (($("#kw3").is(":checked")) && (markersArray[i].markerkw3 == "1")) {
+				if (($("#kw2").is(":checked")) && (markersArray[i].markerkw2 == "1")) {
 					markersArray[i].setMap(map);
 					markerCluster.addMarker(markersArray[i]);
 				} else {
-					if (($("#kw4").is(":checked")) && (markersArray[i].markerkw4 == "1")) {
+					if (($("#kw3").is(":checked")) && (markersArray[i].markerkw3 == "1")) {
 						markersArray[i].setMap(map);
 						markerCluster.addMarker(markersArray[i]);
 					} else {
-						if (($("#kw5").is(":checked")) && (markersArray[i].markerkw5 == "1")) {
+						if (($("#kw6").is(":checked")) && (markersArray[i].markerkw6 == "1")) {
 							markersArray[i].setMap(map);
 							markerCluster.addMarker(markersArray[i]);
 						} else {
-							if (($("#kw6").is(":checked")) && (markersArray[i].markerkw6 == "1")) {
+							if (($("#kw4").is(":checked")) && (markersArray[i].markerkw4 == "1")) {
 								markersArray[i].setMap(map);
 								markerCluster.addMarker(markersArray[i]);
 							} else {
-								if (($("#kw7").is(":checked")) && (markersArray[i].markerkw7 == "1")) {
+								if (($("#kw9").is(":checked")) && (markersArray[i].markerkw9 == "1")) {
 									markersArray[i].setMap(map);
 									markerCluster.addMarker(markersArray[i]);
 								} else {
-									if (($("#kw8").is(":checked")) && (markersArray[i].markerkw8 == "1")) {
+									if (($("#kw5").is(":checked")) && (markersArray[i].markerkw5 == "1")) {
 										markersArray[i].setMap(map);
 										markerCluster.addMarker(markersArray[i]);
 									} else {
-										if (($("#kw9").is(":checked")) && (markersArray[i].markerkw9 == "1")) {
+										if (($("#kw8").is(":checked")) && (markersArray[i].markerkw8 == "1")) {
 											markersArray[i].setMap(map);
 											markerCluster.addMarker(markersArray[i]);
 										}
